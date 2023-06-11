@@ -343,10 +343,10 @@
             "keyLocation": "CurrentUser",
             "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
             "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
-            "valueName": "DisableThumbnailCache",
+            "valueName": "DontPrettyPath",
             "keyType": "DWORD",
-            "keyOffValue": "0",
-            "keyOnValue": "1"
+            "keyOffValue": "1",
+            "keyOnValue": "0"
           }
         ]
       }
