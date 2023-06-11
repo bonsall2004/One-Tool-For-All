@@ -131,7 +131,6 @@ namespace OTFA
         public MainWindow()
         {
             UserSettings.Initialize();
-            AssemblyExtensions.SaveBlankIconToWindowsDirectory();
             InitializeComponent();
             RPCDiscord.Init();
             this.DataContext = new ViewModel {RowItems = GetRowItems("general")};
@@ -173,9 +172,7 @@ namespace OTFA
             {
                 if (row.category.ToLower() == category.ToLower())
                 {
-                    if (UserSettings.failed.Contains(row.codeName)) continue;
-                    else
-                    {
+
                         Items.Add(new RowItems()
                         {
                             Enabled = row.userSetting,
@@ -184,7 +181,7 @@ namespace OTFA
                             Safe = (row.safe == true ? "Yes" : "No"),
                             CodeName = row.codeName
                         });
-                    }
+                    
                     }
             }
             return Items;

@@ -10,7 +10,6 @@ namespace OTFA
 {
     public static class UserSettings
     {
-        public static List<string> failed = new List<string>();
         public static void Initialize()
         {
             try
@@ -31,8 +30,7 @@ namespace OTFA
                             continue;
                         }
                         catch (Exception e){
-                            Errors.ShowOther($"{item.keyName}", "Tweak unavaliable");
-                            failed.Add(generalInfo.codeName);
+                            Errors.ShowOther($"{generalInfo.name}'s default value couldn't be retrieved from registry! \n\nThis could because it's not there by default, don't worry it should be created if its not.", "Tweak unavaliable");
                             continue;
                             throw e;
                         }

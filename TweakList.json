@@ -41,7 +41,7 @@
             "isRegistry": true,
             "keyLocation": "LocalMachine",
             "keyName": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\",
-            "keyPath": "SOFTWARE\\Microsoft\\Windows NT\\CurredsadsadsadasntVersion\\Winlogon\\",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\",
             "valueName": "DisableLockWorkstation",
             "keyType": "DWORD",
             "keyOffValue": "0",
@@ -125,6 +125,107 @@
         ]
       }
     },
+    "AllowUpgradesWithUnsupportedTPMOrCPU": {
+      "codeName": "AllowUpgradesWithUnsupportedTPMOrCPU",
+      "name": "TMP Requirement",
+      "description": "This allows you to bypass window's Windows 11 TMP and CPU requirements (Could be slow depending on the hardware)'.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "You'll have to initialise the installation through your current windows 10 install",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "LocalMachine",
+            "keyName": "HKEY_LOCAL_MACHINE\\SYSTEM\\Setup\\MoSetup\\",
+            "keyPath": "SYSTEM\\Setup\\MoSetup\\",
+            "valueName": "AllowUpgradesWithUnsupportedTPMOrCPU",
+            "keyType": "DWORD",
+            "keyOffValue": "1",
+            "keyOnValue": "null"
+          }
+        ]
+      }
+    },
+    "DisableBing": {
+      "codeName": "DisableBing",
+      "name": "Search Menu Bing",
+      "description": "Use bing results when you're using windows search.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "You'll have to initialise the installation through your current windows 10 install",
+        "command": [ "taskkill /f /im explorer.exe", "start explorer.exe" ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "LocalMachine",
+            "keyName": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer\\",
+            "keyPath": "SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer\\",
+            "valueName": "DisableSearchBoxSuggestions",
+            "keyType": "DWORD",
+            "keyOffValue": "1",
+            "keyOnValue": "null"
+          }
+        ]
+      }
+    },
+
+    "VerboseStatus ": {
+      "codeName": "VerboseStatus ",
+      "name": "Verbose Mode",
+      "description": "Enter window's verbose mode.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer. \n\n This tweak might require that you restart your PC (you'll have to do it manually.')",
+        "command": [ "taskkill /f /im explorer.exe", "start explorer.exe" ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "LocalMachine",
+            "keyName": "HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\Microsoft\\",
+            "keyPath": "SOFTWARE\\WOW6432Node\\Microsoft",
+            "valueName": "ClearPageFileAtShutDown",
+            "keyType": "DWORD",
+            "keyOffValue": "null",
+            "keyOnValue": "32"
+          }
+        ]
+      }
+    },
+    "UseOLEDTaskbarTransparency ": {
+      "codeName": "UseOLEDTaskbarTransparency ",
+      "name": "Transparent Taskbar",
+      "description": "You'll need to right click the Desktop press personalisation>Colours then toggle transparency effects (if its on then turn it off then back on again).",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [ "taskkill /f /im explorer.exe", "start explorer.exe" ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "LocalMachine",
+            "keyName": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "valueName": "UseOLEDTaskbarTransparency",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
     "showRecyclingBin": {
       "codeName": "showRecyclingBin",
       "name": "Show Recycling Bin",
@@ -143,6 +244,106 @@
             "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Classes\\CLSID\\{645FF040-5081-101B-9F08-00AA002F954E}",
             "keyPath": "SOFTWARE\\Classes\\CLSID\\{645FF040-5081-101B-9F08-00AA002F954E}",
             "valueName": "System.IsPinnedToNameSpaceTree",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "checkBoxes": {
+      "codeName": "checkBoxes",
+      "name": "Show Checkboxes",
+      "description": "Show checkboxes in file explorer.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [ "taskkill /f /im explorer.exe", "start explorer.exe" ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "valueName": "AutoCheckSelect",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "DisablePreviewDesktop": {
+      "codeName": "DisablePreviewDesktop",
+      "name": "Preview Desktop",
+      "description": "Preview the desktop.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [ "taskkill /f /im explorer.exe", "start explorer.exe" ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "valueName": "PreviewDesktop",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "DisableThumbnailCache": {
+      "codeName": "DisableThumbnailCache",
+      "name": "Thumbnail Cache",
+      "description": "Caches the thumbnails of files like images.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [ "taskkill /f /im explorer.exe", "start explorer.exe" ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "valueName": "DisableThumbnailCache",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "PrettyPath": {
+      "codeName": "PrettyPath",
+      "name": "Pretty Path",
+      "description": "Microsoft added a feature called pretty path that changes the case of your file paths.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [ "taskkill /f /im explorer.exe", "start explorer.exe" ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "valueName": "DisableThumbnailCache",
             "keyType": "DWORD",
             "keyOffValue": "0",
             "keyOnValue": "1"

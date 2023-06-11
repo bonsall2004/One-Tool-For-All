@@ -1,5 +1,4 @@
-﻿using NetDiscordRpc.Core.Logger;
-using NetDiscordRpc.RPC;
+﻿using NetDiscordRpc.RPC;
 using NetDiscordRpc;
 using Button = NetDiscordRpc.RPC.Button;
 

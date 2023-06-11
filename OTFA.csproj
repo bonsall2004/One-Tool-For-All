@@ -10,19 +10,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Fonts\Montserrat.ttf" />
     <None Remove="noText.ico" />
     <None Remove="OTFA.ico" />
     <None Remove="OTFA.png" />
-    <None Remove="resources\blank.ico" />
     <None Remove="TweakList.json" />
     <None Remove="withText.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Fonts\Montserrat.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
     <Resource Include="noText.ico" />
     <Resource Include="OTFA.ico" />
     <Resource Include="OTFA.png" />
@@ -30,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="resources\blank.ico" />
     <EmbeddedResource Include="TweakList.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
