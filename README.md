@@ -80,7 +80,7 @@ Keep in mind that some windows versions do not have support for some of the twea
 
 ## Helpers
 
-- [Morgan](https://github.com/bonsall2004) Icon Designer
+- [Morgan](https://twitter.com/MorganHughes234) Icon Designer
 - [@Okayrug93](https://github.com/Okayrug93) Bug Fixer
 ## License
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
