@@ -1,7 +1,7 @@
 ﻿using AdonisUI.Controls;
 using System;
 
-namespace OTFA
+namespace OTFA.Utils
 {
     public class Errors
     {

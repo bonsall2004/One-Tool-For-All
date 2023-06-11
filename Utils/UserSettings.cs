@@ -3,10 +3,9 @@ using Microsoft.Win32;
 using AdonisUI.Controls;
 using System;
 using System.IO;
-using System.Windows.Documents;
-using System.Collections.Generic;
+using OTFA.DataTypes;
 
-namespace OTFA
+namespace OTFA.Utils
 {
     public static class UserSettings
     {

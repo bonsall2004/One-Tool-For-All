@@ -13,6 +13,8 @@ using MessageBoxResult = AdonisUI.Controls.MessageBoxResult;
 using NetDiscordRpc;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+using OTFA.Utils;
+using OTFA.DataTypes;
 
 namespace OTFA
 {

@@ -4,8 +4,9 @@ using System.IO;
 using System;
 using System.Reflection;
 using System.Threading.Tasks;
+using OTFA.DataTypes;
 
-namespace OTFA
+namespace OTFA.Utils
 {
     public static class AssemblyExtensions
     {
@@ -31,7 +32,7 @@ namespace OTFA
                 else
                 {
                     var assembly = Assembly.GetEntryAssembly();
-                    var resourceStream = assembly.GetManifestResourceStream("OTFA.TweakList.json");
+                    var resourceStream = assembly.GetManifestResourceStream("OTFA.Assets.TweakList.json");
                     using (var reader = new StreamReader(resourceStream))
                     {
                         var data = JsonConvert.DeserializeObject<Root>(reader.ReadToEnd());
@@ -55,12 +56,14 @@ namespace OTFA
                         }
 
                         string updatedJson = JsonConvert.SerializeObject(data, Formatting.Indented);
-                        File.WriteAllText(AssemblyExtensions.GetFileLocation("TweakList.json"), updatedJson);
+                        File.WriteAllText(GetFileLocation("TweakList.json"), updatedJson);
                         return File.ReadAllText(GetFileLocation("TweakList.json"));
                     };
                 }
-            } catch
-            (Exception e) {
+            }
+            catch
+            (Exception e)
+            {
                 Errors.ShowException(e);
                 Environment.Exit(1);
                 return "";

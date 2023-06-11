@@ -18,14 +18,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="noText.ico" />
-    <Resource Include="OTFA.ico" />
-    <Resource Include="OTFA.png" />
-    <Resource Include="withText.ico" />
+    <Resource Include="Assets\noText.ico" />
+    <Resource Include="Assets\OTFA.ico" />
+    <Resource Include="Assets\OTFA.png" />
+    <Resource Include="Assets\withText.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="TweakList.json">
+    <EmbeddedResource Include="Assets\TweakList.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

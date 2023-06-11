@@ -15,7 +15,7 @@
     Margin="0,0,-8,0"
     FontFamily="Yu Gothic"
     FontWeight="Bold"
-    Icon="pack://application:,,,/withText.ico"
+    Icon="pack://application:,,,/Assets/withText.ico"
     IconVisibility="Hidden"
     PlaceTitleBarOverContent="True"
     TitleVisibility="Hidden"

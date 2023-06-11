@@ -2,7 +2,7 @@
 using NetDiscordRpc;
 using Button = NetDiscordRpc.RPC.Button;
 
-namespace OTFA
+namespace OTFA.Utils
 {
     class RPCDiscord
     {
