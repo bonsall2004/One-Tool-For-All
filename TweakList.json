@@ -1,0 +1,1145 @@
+{
+  "general": {
+    "osInfo": {
+      "codeName": "osInfo",
+      "name": "OS Info",
+      "description": "Display Operating System information on the desktop.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [ "taskkill /f /im explorer.exe", "start explorer.exe" ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "LocalMachine",
+            "keyName": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\",
+            "valueName": "DisplayVersion",
+            "keyType": "DWORD",
+            "keyOffValue": "null",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "disLock": {
+      "codeName": "disLock",
+      "name": "Disable Lockscreen",
+      "description": "Enable or Disable Locking the Workstation.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "LocalMachine",
+            "keyName": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows NT\\CurredsadsadsadasntVersion\\Winlogon\\",
+            "valueName": "DisableLockWorkstation",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "PowerdownAfterShutdown": {
+      "codeName": "PowerdownAfterShutdown",
+      "name": "Powerdown on Shutdown",
+      "description": "Poweroff the computer when you shutdown (It doesn't do it by default).",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Your computer might boot slower because it has to pull memory from non-volitle memory.",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "LocalMachine",
+            "keyName": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\",
+            "valueName": "PowerdownAfterShutdown",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "oldVolumeSlider": {
+      "codeName": "oldVolumeSlider",
+      "name": "Legacy Volume Slider",
+      "description": "Use the legacy volume slider as default.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "LocalMachine",
+            "keyName": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\MTCUVC\\",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\MTCUVC\\",
+            "valueName": "EnableMtcUvc",
+            "keyType": "DWORD",
+            "keyOffValue": "1",
+            "keyOnValue": "0"
+          }
+        ]
+      }
+    },
+    "removeQuickAccess": {
+      "codeName": "removeQuickAccess",
+      "name": "Remove Quick Access",
+      "description": "Remove the quick access menu from file explorer.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "LocalMachine",
+            "keyName": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\",
+            "valueName": "HubMode",
+            "keyType": "DWORD",
+            "keyOffValue": "null",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "showRecyclingBin": {
+      "codeName": "showRecyclingBin",
+      "name": "Show Recycling Bin",
+      "description": "Remove the quick access menu from file explorer.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Classes\\CLSID\\{645FF040-5081-101B-9F08-00AA002F954E}",
+            "keyPath": "SOFTWARE\\Classes\\CLSID\\{645FF040-5081-101B-9F08-00AA002F954E}",
+            "valueName": "System.IsPinnedToNameSpaceTree",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "scrollBarDisable": {
+      "codeName": "scrollBarDisable",
+      "name": "Auto Hide Scrollbar",
+      "description": "Automatically Hides Scrollbars in Windows 10 Apps.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\Control Panel\\Accessibility\\",
+            "keyPath": "Control Panel\\Accessibility\\",
+            "valueName": "DynamicScrollbars",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "screenSaver": {
+      "codeName": "screenSaver",
+      "name": "Disable  Screen Saver",
+      "description": "Shows screensaver after default specified time.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\Software\\Policies\\Microsoft\\Windows\\Control Panel\\Desktop\\",
+            "keyPath": "Software\\Policies\\Microsoft\\Windows\\Control Panel\\Desktop\\",
+            "valueName": "ScreenSaveActive",
+            "keyType": "DWORD",
+            "keyOffValue": "null",
+            "keyOnValue": "0"
+          }
+        ]
+      }
+    },
+    "shortcutArrow": {
+      "codeName": "shortcutArrow",
+      "name": "Show Shortcut Arrow",
+      "description": "Shows the Little Arrow on shortcuts.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [ "taskkill /f /im explorer.exe", "start explorer.exe" ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "LocalMachine",
+            "keyName": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Icons\\",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Icons\\",
+            "valueName": "29",
+            "keyType": "STRING",
+            "keyOffValue": "%SystemRoot%\\System32\\shell32.dll,50",
+            "keyOnValue": "null"
+          }
+        ]
+      }
+    },
+    "regBackup": {
+      "codeName": "regBackup",
+      "name": "Registry Backup",
+      "description": "Backs up the registry.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Disabling this could disrupt protection against registry viruses.",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "LocalMachine",
+            "keyName": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Configuration Manager\\",
+            "keyPath": "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Configuration Manager\\",
+            "valueName": "EnablePeriodicBackup",
+            "keyType": "DWORD",
+            "keyOffValue": "null",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "delDetails": {
+      "codeName": "delDetails",
+      "name": "Full Delete Details",
+      "description": "Shows full delete details when deleting a file.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "ClassesRoot",
+            "keyName": "HKEY_CLASSES_ROOT\\AllFilesystemObjects\\",
+            "keyPath": "AllFilesystemObjects",
+            "valueName": "ConflictPrompt",
+            "keyType": "STRING",
+            "KeyOnValue": "prop:System.ItemTypeText;System.Size;System.DateModified;System.DateCreated",
+            "KeyOffValue": "null"
+          },
+          {
+            "isRegistry": true,
+            "keyLocation": "ClassesRoot",
+            "keyName": "HKEY_CLASSES_ROOT\\AllFilesystemObjects\\",
+            "keyPath": "AllFilesystemObjects",
+            "valueName": "ExtendedTileInfo",
+            "keyType": "STRING",
+            "KeyOnValue": "prop:System.ItemTypeText;System.Size;System.DateModified;System.OfflineAvailability",
+            "KeyOffValue": "null"
+          },
+          {
+            "isRegistry": true,
+            "keyLocation": "ClassesRoot",
+            "keyName": "HKEY_CLASSES_ROOT\\AllFilesystemObjects\\",
+            "keyPath": "AllFilesystemObjects",
+            "valueName": "FullDetails",
+            "keyType": "STRING",
+            "KeyOnValue": "prop:System.PropGroup.FileSystem;System.ItemNameDisplay;System.ItemTypeText;System.ItemFolderPathDisplay;System.Size;System.DateCreated;System.DateModified;System.FileAttributes;*System.StorageProviderState;*System.OfflineAvailability;*System.OfflineStatus;*System.SharedWith;*System.FileOwner;*System.ComputerName",
+            "KeyOffValue": "null"
+          },
+          {
+            "isRegistry": true,
+            "keyLocation": "ClassesRoot",
+            "keyName": "HKEY_CLASSES_ROOT\\AllFilesystemObjects\\",
+            "keyPath": "AllFilesystemObjects",
+            "valueName": "InfoTip",
+            "keyType": "STRING",
+            "KeyOnValue": "prop:System.ItemTypeText;System.Size;System.DateModified",
+            "KeyOffValue": "null"
+          },
+          {
+            "isRegistry": true,
+            "keyLocation": "ClassesRoot",
+            "keyName": "HKEY_CLASSES_ROOT\\AllFilesystemObjects\\",
+            "keyPath": "AllFilesystemObjects",
+            "valueName": "NoRecentDocs",
+            "keyType": "STRING",
+            "KeyOnValue": "",
+            "KeyOffValue": "null"
+          },
+          {
+            "isRegistry": true,
+            "keyLocation": "ClassesRoot",
+            "keyName": "HKEY_CLASSES_ROOT\\AllFilesystemObjects\\",
+            "keyPath": "AllFilesystemObjects",
+            "valueName": "NoStaticDefaultVerb",
+            "keyType": "STRING",
+            "KeyOnValue": "",
+            "KeyOffValue": "null"
+          },
+          {
+            "isRegistry": true,
+            "keyLocation": "ClassesRoot",
+            "keyName": "HKEY_CLASSES_ROOT\\AllFilesystemObjects\\",
+            "keyPath": "AllFilesystemObjects",
+            "valueName": "PreviewDetails",
+            "keyType": "STRING",
+            "KeyOnValue": "prop:System.DateModified;System.Size;System.DateCreated;*System.StorageProviderState;*System.OfflineAvailability;*System.OfflineStatus;*System.SharedWith",
+            "KeyOffValue": "null"
+          },
+          {
+            "isRegistry": true,
+            "keyLocation": "ClassesRoot",
+            "keyName": "HKEY_CLASSES_ROOT\\AllFilesystemObjects\\",
+            "keyPath": "AllFilesystemObjects",
+            "valueName": "PreviewTitle",
+            "keyType": "STRING",
+            "KeyOnValue": "prop:System.ItemNameDisplay;System.ItemTypeText",
+            "KeyOffValue": "null"
+          },
+          {
+            "isRegistry": true,
+            "keyLocation": "ClassesRoot",
+            "keyName": "HKEY_CLASSES_ROOT\\AllFilesystemObjects\\",
+            "keyPath": "AllFilesystemObjects",
+            "valueName": "QuickTip",
+            "keyType": "STRING",
+            "KeyOnValue": "prop:System.ItemTypeText;System.Size;System.DateModified",
+            "KeyOffValue": "null"
+          },
+          {
+            "isRegistry": true,
+            "keyLocation": "ClassesRoot",
+            "keyName": "HKEY_CLASSES_ROOT\\AllFilesystemObjects\\",
+            "keyPath": "AllFilesystemObjects",
+            "valueName": "SetDefaultsFor",
+            "keyType": "STRING",
+            "KeyOnValue": "prop:System.Author;System.Document.DateCreated",
+            "KeyOffValue": "null"
+          },
+          {
+            "isRegistry": true,
+            "keyLocation": "ClassesRoot",
+            "keyName": "HKEY_CLASSES_ROOT\\AllFilesystemObjects\\",
+            "keyPath": "AllFilesystemObjects",
+            "valueName": "TileInfo",
+            "keyType": "STRING",
+            "KeyOnValue": "prop:System.ItemTypeText;System.Size;System.DateModified",
+            "KeyOffValue": "null"
+          },
+          {
+            "isRegistry": true,
+            "keyLocation": "ClassesRoot",
+            "keyName": "HKEY_CLASSES_ROOT\\AllFilesystemObjects",
+            "keyPath": "AllFilesystemObjects",
+            "valueName": "FileOperationPrompt",
+            "keyType": "STRING",
+            "KeyOnValue": "prop:System.PropGroup.FileSystem;System.ItemNameDisplay;System.ItemTypeText;System.ItemFolderPathDisplay;System.Size;System.DateCreated;System.DateModified;System.FileAttributes;System.OfflineAvailability;System.OfflineStatus;System.SharedWith;System.FileOwner;System.ComputerName",
+            "KeyOffValue": "null"
+          }
+        ]
+      }
+    },
+    "winLongPath": {
+      "codeName": "winLongPath",
+      "name": "Win32 Long Paths",
+      "description": "Show Windows Long Paths.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "LocalMachine",
+            "keyName": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\FileSystem\\",
+            "keyPath": "SYSTEM\\CurrentControlSet\\Control\\FileSystem\\",
+            "valueName": "LongPathsEnabled",
+            "keyType": "DWORD",
+            "keyOffValue": "null",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "runBoxDialog": {
+      "codeName": "runBoxDialog",
+      "name": "Disable Run Dialog",
+      "description": "Toggle Windows Run Box.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [ "taskkill /f /im explorer.exe", "start explorer.exe" ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\",
+            "keyPath": "Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\",
+            "valueName": "NoRun",
+            "keyType": "DWORD",
+            "keyOffValue": "null",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "taskManager": {
+      "codeName": "taskManager",
+      "name": "Disable Task Manager",
+      "description": "Toggle Windows Task Manager.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [ "taskkill /f /im explorer.exe", "start explorer.exe" ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\",
+            "keyPath": "Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System\\",
+            "valueName": "DisableTaskMgr",
+            "keyType": "DWORD",
+            "keyOffValue": "null",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+
+    "taskbarShowSeconds": {
+      "codeName": "taskbarShowSeconds",
+      "name": "Show seconds on clock",
+      "description": "Toggle showing seconds on the taskbar clock.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [
+          "taskkill /f /im explorer.exe",
+          "start explorer.exe"
+        ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "keyPath": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "valueName": "ShowSecondsInSystemClock",
+            "keyType": "DWORD",
+            "keyOffValue": "null",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "explorerToDownloads": {
+      "codeName": "explorerToDownloads",
+      "name": "Open to Downloads",
+      "description": "Opens File Explorer to Downloads.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [
+          "taskkill /f /im explorer.exe",
+          "start explorer.exe"
+        ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "valueName": "LaunchTo",
+            "keyType": "DWORD",
+            "keyOffValue": "1",
+            "keyOnValue": "3"
+          }
+        ]
+      }
+    },
+    "protectedRenames": {
+      "codeName": "protectedRenames",
+      "name": "Protected Renames",
+      "description": "Rename files to names that have been reserved by the operating system.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\",
+            "keyPath": "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\",
+            "valueName": "AllowProtectedRenames",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+
+    "explorerToQuickAccess": {
+      "codeName": "explorerToQuickAccess",
+      "name": "Open to Quick Access",
+      "description": "Opens File Explorer to Quick Access.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [
+          "taskkill /f /im explorer.exe",
+          "start explorer.exe"
+        ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "valueName": "LaunchTo",
+            "keyType": "DWORD",
+            "keyOffValue": "1",
+            "keyOnValue": "2"
+          }
+        ]
+      }
+    },
+    "webViewBarricade": {
+      "codeName": "webViewBarricade",
+      "name": "Web View Barricade",
+      "description": "Displays the content of system folders.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [
+          "taskkill /f /im explorer.exe",
+          "start explorer.exe"
+        ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "valueName": "WebViewBarricade",
+            "keyType": "DWORD",
+            "keyOffValue": "1",
+            "keyOnValue": "0"
+          }
+        ]
+      }
+    },
+    "noNetCrawling": {
+      "codeName": "noNetCrawling",
+      "name": "Net Crawling",
+      "description": "Automatically search for network folders and printers.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [
+          "taskkill /f /im explorer.exe",
+          "start explorer.exe"
+        ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "valueName": "NoNetCrawling",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "HideFileExt": {
+      "codeName": "HideFileExt",
+      "name": "File Extentions",
+      "description": "Show File Extentions.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "",
+        "command": [
+
+        ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "valueName": "HideFileExt",
+            "keyType": "DWORD",
+            "keyOffValue": "1",
+            "keyOnValue": "0"
+          }
+        ]
+      }
+    },
+    "showCompColor": {
+      "codeName": "showCompColor",
+      "name": "Compressed File Colour",
+      "description": "Displays compressed and encrypted NTFS files in color.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [
+          "taskkill /f /im explorer.exe",
+          "start explorer.exe"
+        ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "valueName": "showCompColor",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "persistBrowsers": {
+      "codeName": "persistBrowsers",
+      "name": "Persist Folder View",
+      "description": "Persists each folder's view state.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [
+          "taskkill /f /im explorer.exe",
+          "start explorer.exe"
+        ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "valueName": "persistBrowsers",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "classicViewState": {
+      "codeName": "classicViewState",
+      "name": "Classic View",
+      "description": "Represents a set of behaviors that control features such as translucent dialogs.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [
+          "taskkill /f /im explorer.exe",
+          "start explorer.exe"
+        ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "valueName": "classicViewState",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "separateProcess": {
+      "codeName": "separateProcess",
+      "name": "Separate Process",
+      "description": "Launches folder dialogs in separate processes.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [
+          "taskkill /f /im explorer.exe",
+          "start explorer.exe"
+        ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "valueName": "separateProcess",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "disableThumbnailCache": {
+      "codeName": "disableThumbnailCache",
+      "name": "Thumbnail Cache",
+      "description": "Disables Caching Thumbnails ",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [
+          "taskkill /f /im explorer.exe",
+          "start explorer.exe"
+        ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "valueName": "disableThumbnailCache",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "friendlyTree": {
+      "codeName": "friendlyTree",
+      "name": "Friendly Tree",
+      "description": "Displays the simple folder view in the shell folder list.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [
+          "taskkill /f /im explorer.exe",
+          "start explorer.exe"
+        ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "valueName": "friendlyTree",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "folderContentsInfoTip": {
+      "codeName": "folderContentsInfoTip",
+      "name": "Folder Size Info",
+      "description": "Displays file size information in folder tips.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [
+          "taskkill /f /im explorer.exe",
+          "start explorer.exe"
+        ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+            "valueName": "folderContentsInfoTip",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "osProtectedFiles": {
+      "codeName": "osProtectedFiles",
+      "name": "Show Protected Files",
+      "description": "Shows operating system protected files.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [
+          "taskkill /f /im explorer.exe",
+          "start explorer.exe"
+        ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "valueName": "ShowSuperHidden ",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "showHiddenFiles": {
+      "codeName": "showHiddenFiles",
+      "name": "Show Hidden Files",
+      "description": "Shows hidden files, folders and drives.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [
+          "taskkill /f /im explorer.exe",
+          "start explorer.exe"
+        ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "valueName": "Hidden",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+
+    "clipboardHistory": {
+      "codeName": "clipboardHistory",
+      "name": "Store Clipboard History",
+      "description": "Allows storing multiple things on your clipboard (Win+V).",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Enabling this tweak will reload file explorer which can make your taskbar vanish for a few seconds or longer.",
+        "command": [
+          "taskkill /f /im explorer.exe",
+          "start explorer.exe"
+        ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "LocalMachine",
+            "keyName": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\System\\",
+            "keyPath": "SOFTWARE\\Policies\\Microsoft\\Windows\\System\\",
+            "valueName": "AllowClipboardHistory",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+
+    "hwGpuAcc": {
+      "codeName": "hwGpuAcc",
+      "name": "GPU Hardware Acceleration",
+      "description": "Toggle GPU hardware acceleration Scheduling.",
+      "safe": false,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Disabling this setting could cause issues in applications that require hardware acceleration.  \n\nYou'll need to restart your computer manually for this to take effect.",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "LocalMachine",
+            "keyName": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers\\",
+            "keyPath": "SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers\\",
+            "valueName": "HwSchMode",
+            "keyType": "DWORD",
+            "keyOffValue": "1",
+            "keyOnValue": "2"
+          }
+        ]
+      }
+    },
+    "advertID": {
+      "codeName": "advertID",
+      "name": "Disable Advertising ID",
+      "description": "Disable Advertising ID for relevant ads (Windows 10 Only)",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AdvertisingInfo\\",
+            "keyPath": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AdvertisingInfo\\",
+            "valueName": "Enabled",
+            "keyType": "DWORD",
+            "keyOffValue": "1",
+            "keyOnValue": "0"
+          }
+        ]
+      }
+    },
+    "modernStandby": {
+      "codeName": "modernStandby",
+      "name": "Windows Modern Standby",
+      "description": "Windows Modern Standby can and probably will drain your entire battery whilst your laptop is in your bag.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "LocalMachine",
+            "keyName": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Power\\",
+            "keyPath": "SYSTEM\\CurrentControlSet\\Control\\Power\\",
+            "valueName": "PlatformAoAcOverride",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "disableTelemetry": {
+      "codeName": "disableTelemetry",
+      "name": "Windows Telemetry",
+      "description": "Window's \"phone home features\" that spy on you and steal your information. (Turn it on then off if you're unsure sometimes it shows as off when its actually on.)",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "LocalMachine",
+            "keyName": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection\\",
+            "keyPath": "SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection\\",
+            "valueName": "AllowTelemetry",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "RestrictImplicitInkCollection": {
+      "codeName": "RestrictImplicitInkCollection",
+      "name": "Restrict Ink Collection",
+      "description": "Restrict the collection of your Ink and Typing data collection.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\InputPersonalization\\",
+            "keyPath": "SOFTWARE\\Microsoft\\InputPersonalization\\",
+            "valueName": "RestrictImplicitInkCollection",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "RestrictImplicitTextCollection": {
+      "codeName": "RestrictImplicitTextCollection",
+      "name": "Restrict Text Collection",
+      "description": "Restrict the collection of your Ink and Typing data collection. (Not the same as the other one)",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\InputPersonalization\\",
+            "keyPath": "SOFTWARE\\Microsoft\\InputPersonalization\\",
+            "valueName": "RestrictImplicitTextCollection",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "HarvestContacts": {
+      "codeName": "HarvestContacts",
+      "name": "Harvest Contacts",
+      "description": "Restrict the Harvesting of Your Contacts by Microsoft.",
+      "safe": true,
+      "category": "general",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "",
+        "command": [],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\InputPersonalization\\TrainedDataStore\\",
+            "keyPath": "SOFTWARE\\Microsoft\\InputPersonalization\\TrainedDataStore\\",
+            "valueName": "HarvestContacts",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    },
+    "popupDescriptions": {
+      "codeName": "popupDescriptions",
+      "name": "Pop Up Descriptions",
+      "description": "Toggle Pop Up Descriptions in File Explorer for the Current User.",
+      "safe": true,
+      "category": "fileExplorer",
+      "version": "1.0.0",
+      "userSetting": true,
+      "getValues": {
+        "warning": "Disabling this setting could cause issues in applications that require hardware acceleration.  \n\nYou'll need to restart your computer manually for this to take effect.",
+        "command": [
+          "taskkill /f /im explorer.exe",
+          "start explorer.exe"
+        ],
+        "scripts": [
+          {
+            "isRegistry": true,
+            "keyLocation": "CurrentUser",
+            "keyName": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "keyPath": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\",
+            "valueName": "ShowInfoTip",
+            "keyType": "DWORD",
+            "keyOffValue": "0",
+            "keyOnValue": "1"
+          }
+        ]
+      }
+    } //
+  },
+
+  "version": "1.1.0"
+}

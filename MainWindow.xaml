@@ -1,0 +1,197 @@
+﻿<adonisControls:AdonisWindow
+    x:Class="OTFA.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:adonisControls="clr-namespace:AdonisUI.Controls;assembly=AdonisUI"
+    xmlns:adonisUi="clr-namespace:AdonisUI;assembly=AdonisUI"
+    xmlns:av="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="adonisWindow"
+    Title="One Tool For All"
+    Width="1062"
+    Height="997"
+    MinWidth="800"
+    MinHeight="480"
+    Margin="0,0,-8,0"
+    FontFamily="Yu Gothic"
+    FontWeight="Bold"
+    Icon="pack://application:,,,/withText.ico"
+    IconVisibility="Hidden"
+    PlaceTitleBarOverContent="True"
+    TitleVisibility="Hidden"
+    mc:Ignorable="av">
+
+    <adonisControls:AdonisWindow.TitleBarContent>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button
+                Width="100px"
+                Click="GeneralClick"
+                Content="General"
+                FontFamily="Yu Gothic"
+                FontSize="14"
+                Style="{DynamicResource {x:Static adonisUi:Styles.WindowButton}}" />
+            <Button
+                Width="110px"
+                Padding="9"
+                Click="FileExplorerClick"
+                Content="File Explorer"
+                FontFamily="Yu Gothic"
+                FontSize="14"
+                Style="{DynamicResource {x:Static adonisUi:Styles.WindowButton}}" />
+            <Button
+                Width="110px"
+                Click="ContextMenuClick"
+                Content="Context Menu"
+                FontFamily="Yu Gothic"
+                FontSize="14"
+                IsEnabled="False"
+                Style="{DynamicResource {x:Static adonisUi:Styles.WindowButton}}" />
+        </StackPanel>
+    </adonisControls:AdonisWindow.TitleBarContent>
+    <Grid Margin="10,0,10,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <DataGrid
+            x:Name="TweaksList"
+            Margin="0,40,0,0"
+            VerticalAlignment="Top"
+            AlternatingRowBackground="#353542"
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            CanUserDeleteRows="False"
+            CanUserReorderColumns="False"
+            CanUserResizeRows="False"
+            ColumnWidth="Auto"
+            Cursor="Hand"
+            FontFamily="Yu Gothic"
+            FontSize="14"
+            FontStretch="SemiExpanded"
+            FontWeight="SemiBold"
+            GridLinesVisibility="None"
+            ItemsSource="{Binding RowItems}"
+            RowDetailsVisibilityMode="Visible"
+            SelectionChanged="TweaksList_SelectionChanged"
+            SelectionMode="Single"
+            UseLayoutRounding="False">
+
+            <DataGrid.Columns>
+
+                <DataGridTemplateColumn Header="Enabled">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Padding" Value="10,10" />
+                            <Setter Property="FontFamily" Value="Yu Gothic" />
+                            <Setter Property="Background" Value="#3d3d4c" />
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                BorderThickness="0"
+                                IsChecked="{Binding Enabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                Style="{DynamicResource {x:Static adonisUi:Styles.ToggleSwitch}}" />
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Name" IsReadOnly="True">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="FontFamily" Value="Yu Gothic" />
+                            <Setter Property="Padding" Value="10,10" />
+                            <Setter Property="Background" Value="#3d3d4c" />
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Text="{Binding Name}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn
+                    Width="*"
+                    Header="Description"
+                    IsReadOnly="True">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Padding" Value="10,10" />
+                            <Setter Property="Background" Value="#3d3d4c" />
+                            <Setter Property="FontFamily" Value="Yu Gothic" />
+
+                        </Style>
+
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock
+                                MaxWidth="Infinity"
+                                Padding="10,10,10,10"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Text="{Binding Description}"
+                                TextTrimming="WordEllipsis"
+                                TextWrapping="Wrap"
+                                ToolTip="{Binding Description}" />
+
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Safe" IsReadOnly="True">
+                    <DataGridTemplateColumn.HeaderStyle>
+                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Padding" Value="4,10,10,10" />
+                            <Setter Property="FontFamily" Value="Yu Gothic" />
+                            <Setter Property="Background" Value="#3d3d4c" />
+                        </Style>
+                    </DataGridTemplateColumn.HeaderStyle>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                IsEnabled="False"
+                                Text="{Binding Safe}"
+                                TextAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn
+                    Binding="{Binding codeName}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="False"
+                    Header="codeName"
+                    IsReadOnly="True"
+                    Visibility="Hidden" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button
+            Grid.Row="1"
+            Height="50"
+            Margin="0,10,0,10"
+            Padding="8,0,8,-3.3"
+            VerticalAlignment="Bottom"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Click="ApplyTweaks"
+            Content="Apply Tweaks"
+            FontFamily="Yu Gothic"
+            FontSize="18"
+            FontWeight="Bold"
+            RenderTransformOrigin="1,1"
+            ScrollViewer.VerticalScrollBarVisibility="Disabled" />
+
+
+    </Grid>
+
+
+</adonisControls:AdonisWindow>
